@@ -5,7 +5,7 @@ Content Management System WEBSCRP - 2014
 
 -- Summary --
 
--13/02/14
+- 13/02/14
 
 -Set up new repository to make it easier to follow and keep versioned.
 
