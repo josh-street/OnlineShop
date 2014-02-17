@@ -30,8 +30,11 @@ ini_set('display_errors', '1');
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title>Manage - CMS</title>
-  <link href="../lib/style/style.css" rel="stylesheet" type="text/css" />
+  <title>Manage - Online Store</title>
+  <meta name="author" content="Josh Street" >
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <link rel="shortcut icon" href="lib/style/images/favicon.ico" >
+  <link href="lib/style/style.css" rel="stylesheet" type="text/css" />
   <script src="../lib/adminmenu.js"></script>
   <script src="../lib/dialogboxes.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

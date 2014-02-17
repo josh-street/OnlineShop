@@ -5,10 +5,11 @@ include_once "inc/functions.php";
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
+	<title>Online Store</title>
+	<meta name="author" content="Josh Street" >
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<link rel="shortcut icon" href="lib/style/images/favicon.ico" >
 	<link href="lib/style/style.css" rel="stylesheet" type="text/css" />	
-	<title>Content Management System</title>
-
 </head>
 <body>
 	<div id="wrapper">
