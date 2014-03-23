@@ -10,7 +10,7 @@ include_once "inc/functions.php";
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 	<link rel="shortcut icon" href="lib/style/images/favicon.ico" >
 	<link href="lib/style/style.css" rel="stylesheet" type="text/css" />	
-	<link href="http://fonts.googleapis.com/css?family=Ubuntu:500|Open+Sans|Open+Sans+Condensed:300" rel="stylesheet" type="text/css">
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu:500|Open+Sans|Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 	<script src='lib/productdisplay.js' type='text/javascript'></script>
 </head>
 <body>
@@ -30,10 +30,9 @@ include_once "inc/functions.php";
 		<!-- end of header -->
 	</div>
 	<div id="content" class="visible">
-			<ul class="products"></ul>
-	</div>
-	<div id="details"><div id="detailImg"></div></div>
 
+
+	</div>
 	<div class="footer">
 		<p class="center">&copy; Josh Street UP661688 <a class="right" href="admin">Admin Area</a></p>
 	</div>	

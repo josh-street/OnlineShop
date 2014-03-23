@@ -1,5 +1,5 @@
 body {
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   height: 100%;
   -webkit-font-smoothing: antialiased;
@@ -14,39 +14,39 @@ body {
 h1, h2, h3 {
   margin: 0;
   padding: 0;
-  font-weight: normal;
-  color: #008080;
+  font-family: Helvetica, sans-serif;
+  color: rgba(0, 128, 128, 0.7);
 
 }
 
 h1 {
-  font-size: 2.5em;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 200;
+  font-size: 30pt;
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 18pt;
+  text-align: right;
+  padding-right: 220px;
+  padding-top: 0.5em;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 h3 {
-  font-size: 1.6em;
+  font-size: 16pt;
+  padding-top: 0.5em;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 h4 {
-  font-family: Helvetica;
-  font-weight: 300;
-  font-size: 16px;
-  margin: 0 auto;
-  padding-top: 1em;
-  padding-bottom: 0.2em;
+  font-size: 14pt;
+  text-align: center;
+  padding-top: 0.5em;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
 }
 
-p, ul, ol {
-  margin-top: 0;
-  line-height: 150%;
-}
-
-ul, ol {
-}
 
 a {
   text-decoration: none;
@@ -62,7 +62,7 @@ a {
 
 #header {
   text-align: center;
-  width: 70%;
+  width: 99%;
   margin: 0 auto;
 }
 
@@ -77,8 +77,7 @@ a {
 }
 #logo h1 {
   text-shadow: 3px 4px 5px #d0d0d0; 
-  font-weight: 400;
-  font-size: 48px; 
+  font-weight: 400; 
 }
 
 /* Menu */
@@ -181,14 +180,69 @@ a {
 
 }
 #content {
-  border-radius: 5px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 75%; 
+  padding-top: 1em;
+  padding: 0 auto;
+  width: 100%; 
   overflow: auto;
-  max-height: 42em;
+  max-height: 36em;
+  float: center;
 }
 
+#details {
+  border-radius: 5px;
+  margin-right: auto;
+  padding-top: 1em;
+  padding-left: 0.5em;
+  width: 50%; 
+  overflow: auto;
+  max-height: 38em;
+}
+
+#details p,h2,h3 {
+  display: inline-block;
+}
+
+#details img {
+  display: inline-block;
+  vertical-align: top;
+  width: 60%;
+
+}
+
+
+
+.hidden{
+  display: none;
+}
+.visible{
+  display: block;
+}
+
+#description h2 {
+  text-align: left;
+}
+
+#description h3 {
+  padding-top: 1.5em;
+  padding-bottom: 0.5em;
+}
+
+#description p {
+  font-size: 14pt;
+}
+
+#addtobask {
+  display: inline-block;
+  margin-top: 3em;
+  width: 7em;
+  padding: 0.5em;
+  color: #4c4c4c;
+  text-shadow: 0 1px #e3f1f1;
+  background: #f3f3f3;
+  border: 1px solid #d0d0d0;
+  border-radius: 5px;
+  cursor: pointer;
+}
                     
 
 .footer {
@@ -235,7 +289,6 @@ a {
 
 .adminmenuContainer {
   border-radius: 5px;
-  opacity: 0.7;
   margin-left: 2.5%;
   width: 11%; 
   overflow-y: auto;   
@@ -338,7 +391,7 @@ a {
 .productname {
   position:relative;
   float:left;
-  width: 30%;
+  width: 16%;
   margin: 1.5%;
   height: 12em;
   vertical-align:middle;
@@ -346,22 +399,18 @@ a {
 }
 
 .productname p {
-  text-align: left;
+  text-align: center;
   padding-left: 5px;
   margin-bottom: 1px;
+}
+
+.productname img {
+  padding: 0 auto;
 }
 
 .productname small {
   font-size: 9pt;
   padding-left: 60%;
-}
-
-.productimage {
-  width: 80%;
-  height: 80%;
-  margin: 0 auto;
-
-
 }
 
 #newtoggles {

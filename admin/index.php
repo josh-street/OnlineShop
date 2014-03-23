@@ -15,7 +15,7 @@ if(isset($_GET['yesdelete'])){
   $imgdelete = ("../assets/images/products/$deleteid.jpg");
   if (file_exists($imgdelete)){
     unlink($imgdelete);
-    header("location: http://127.0.0.1/cms/admin/index.php");
+    header("location: http://127.0.0.1/OnlineStore/admin/index.php");
     exit();
   }
 }
@@ -34,19 +34,20 @@ ini_set('display_errors', '1');
   <meta name="author" content="Josh Street" >
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
   <link rel="shortcut icon" href="lib/style/images/favicon.ico" >
-  <link href="lib/style/style.css" rel="stylesheet" type="text/css" />
-  <script src="../lib/adminmenu.js"></script>
-  <script src="../lib/dialogboxes.js"></script>
+  <link href="../lib/style/style.css" rel="stylesheet" type="text/css" />
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu:500|Open+Sans|Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <script src="../lib/misc.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src='lib/productdisplay.js' type='text/javascript'></script>
 </head>
 <body>
   <div id="header">
     <div id="logo">
-      <h2><a href="index.php">Content Management System (CMS)</a></h2>
+      <h1><a href="index.php">Content Management System</a></h1>
     </div>
   </div>
   <div id="adminmenuContainer" class="adminmenuContainer">
-    <h2 style='text-align: center; padding:0.1em; border-bottom:1px dotted #008080'>Quick Menu</h2>
+    <h3 style='text-align: center; padding:0.1em; border-bottom:1px dotted #008080'>Quick Menu</h3>
     <?php 
     $index = '2';
     $result = mysql_query("SELECT label, link FROM `categories` WHERE relevent=1");
@@ -65,7 +66,7 @@ ini_set('display_errors', '1');
     ?>
   </div>
   <div class="productlist">
-    <h2 style='text-align: center; padding:0.2em; border-bottom:1px dotted #008080'>Product List</h2>
+    <h3 style='padding-left:50%; border-bottom:1px dotted;'>Product List</h3><br>
     <?php 
     if(isset($_GET['subcat'])){
       $product_list = "";
@@ -156,15 +157,12 @@ ini_set('display_errors', '1');
 
           <div id="addcategories" class="hidden">
            <h2 style='text-align: center; padding:0.2em; border-bottom:1px dotted #008080'>Add New Categories</h2>
-           <?php
-           include '../inc/addcategory.php';
-           ?>
            <form action="index.php" enctype="multipart/form-data" name="addcategoryform" id="addcategoryform" method="post">
             <h4><label for="catname">Category:</label>
               <input type="text" id="catname" name="catname" placeholder="Category Name"/></h4>
               <h4><label for="sub_catname">Sub-Category:</label>
                 <input type="text" id="sub_catname" name="sub_catname" placeholder="Sub-Category"/></h4>
-                <p class="submit"><input type="submit" name="submit" value="Submit"></p>
+                <p class="submit"><input type="submit" onclick='ajaxSend()' value='Submit'></p>
 
 
               </form>
