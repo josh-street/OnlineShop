@@ -60,10 +60,5 @@ include_once "../inc/functions.php";
  <div class="footer">
   <p class="center">&copy; Josh Street UP661688 <a class="right" href="../">Back to Store</a></p>
 </div>  
-<script>
-  document.addEventListener("DOMContentLoaded", function(event) {
-    console.log("DOM fully loaded and parsed");
-  });
-</script>
 </body>
 </html>
