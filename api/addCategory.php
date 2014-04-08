@@ -1,40 +1,39 @@
 <?php
-include "connect.php";
+include "../api/connect.php";
 // Retrieve data from Ajax request query string and help prevent SQL Injection
-$cat = mysql_real_escape_string($_GET['cat']);
-$subcat = mysql_real_escape_string($_GET['subcat']);
-$catlink = "?cat=" . $cat;
-$subcatlink = "?subcat=" . $subcat;
+if (isset($_REQUEST)){
+	$catname = mysql_real_escape_string($_REQUEST['catname']);
+	$subcatname = mysql_real_escape_string($_REQUEST['sub_catname']);
+	$catlink = "?filter=" . $catname;
+	$subcatlink = "?filter=" . $subcatname;
 
 
 
 // Create the query
-$query = "INSERT INTO categories (label, link, parent, relevent) ";
-if(!$subcat)
-	$query .= "VALUES ('$cat', '$catlink', '0', '1')";
-	$qry_result = mysql_query($query) or die(mysql_error());
-else 
-	echo "null";
-
-
-//Execute query
-
-
-
-
-/*// Insert a new row in the table for each person returned
-while($row = mysql_fetch_array($qry_result)){
-	$display_string .= "<tr>";
-	$display_string .= "<td>$row[name]</td>";
-	$display_string .= "<td>$row[age]</td>";
-	$display_string .= "<td>$row[sex]</td>";
-	$display_string .= "<td>$row[wpm]</td>";
-	$display_string .= "</tr>";
-	
+	$query = "INSERT INTO categories (label, link, parent, relevent) ";
+	if(!$subcatname){
+		$query .= "VALUES ('$catname', '$catlink', '0', '1')";
+		$qry_result = mysql_query($query) or die(mysql_error());
+		$response["success"] = TRUE;
+		$response["details"] = "Category successfully inserted to database";
+		echo json_encode($response);
+	}
+	else {
+		$i = 0;
+		$sql = mysql_query("SELECT id FROM categories WHERE label = '$catname'");
+		$rows = mysql_num_rows($sql); 
+		while ($i < $rows) {
+			$id = mysql_result($sql, $i, "id");
+			$i++;
+		}
+		//not working
+		$query .= "VALUES ('$subcatname', '$subcatlink', '$id', '0')";
+		$qry_result = mysql_query($query) or die(mysql_error());
+		header('../admin/index.php');
+		$response["success"] = TRUE;
+		$response["details"] = "Sub-Category successfully inserted to database";
+		echo json_encode($response);
+	}
 }
-echo "Query: " . $query . "<br />";
-$display_string .= "</table>";
-echo $display_string;*/
+exit();
 ?>
-
-	

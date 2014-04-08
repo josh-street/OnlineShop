@@ -11,39 +11,36 @@ body {
 
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   margin: 0;
   padding: 0;
   font-family: Helvetica, sans-serif;
   color: rgba(0, 128, 128, 0.7);
+  font-family: 'Ubuntu', sans-serif;
 
 }
 
 h1 {
-  font-family: 'Ubuntu', sans-serif;
   font-weight: 200;
   font-size: 30pt;
 }
 
 h2 {
   font-size: 18pt;
-  text-align: right;
-  padding-right: 220px;
-  padding-top: 0.5em;
-  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
 }
 
 h3 {
   font-size: 16pt;
   padding-top: 0.5em;
-  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
+  font-weight: 400;
 }
 
 h4 {
   font-size: 14pt;
   text-align: center;
   padding-top: 0.5em;
-  font-family: 'Ubuntu', sans-serif;
   font-weight: 400;
 }
 
@@ -94,6 +91,7 @@ a {
   list-style: none;
   text-align: center;
   color: #000000;
+  display: inline-block;
 
 }
 
@@ -252,7 +250,7 @@ a {
   bottom: 0;
   left: 0;
   right: 0;  
-  margin: 0px auto 10px auto;
+  margin: 0px auto 0px auto;
   background: #ffffff;  
   padding-top: 5px;
   border-top: 1px dotted #4d4d4d;
@@ -287,76 +285,57 @@ a {
    background: #8a8a8a;
    }
 
-.adminmenuContainer {
+
+#adminmenu {
   border-radius: 5px;
   margin-left: 2.5%;
-  width: 11%; 
-  overflow-y: auto;   
+  margin-top: -5em;
+  width: 14%;   
   float:left;
-  max-height: 42em;  
+  max-height: 70%;  
   background: rgba(234,234,234, 0.7);
-  padding: 0.5em 1.5em;
+  overflow: hidden;
 }
 
-
-.adminmenuTitle
-{
-  padding: 1em;
-  overflow:hidden;
-  cursor:pointer;
-  font-weight: 600;
-  font-size: 18px;
-  text-align: center;
-}
-
-.adminmenuTitle a {
-  color: black;
-}
-.adminmenuTitle:hover
-{
-  background: #D8D8D8;
-  color: #008080;
-}
-
-.adminmenuContent
-{
-  padding-top: 1em;
-  text-align: center;
-  overflow:auto;
-  display:none; 
-}
-.adminmenuContent a {
-  font-size: 16px;
-  font-weight: 400;
-  color: #000;
-
+#adminmenu ul {
+  padding-left: 2em;
+  overflow: hidden;
+  list-style: none;
 
 }
-
-.adminmenuContent p:hover {
-  background: #D8D8D8;
+#adminmenu h3 {
+  padding-left: 1em;  
+  
 }
 
-.adminmenuContent a:hover {
-  color: #008080;
-}
-
-
-
-.productlist {
+#productlist {
   border-radius: 5px;
-  padding: 0.5em 1.5em;
-  width: 50%; 
+  margin-left: 0.5em;
+  width: 55%; 
   overflow: auto;
   float: left; 
-  max-height: 42em;
+  max-height: 38em;
+  display: inline-block;
 
+}
+
+#productlist img {
+  max-width: 8em;
+}
+
+#productlist li {
+  list-style-position:inside;
+  width: 10em;
+  border: 2px solid rgb(234,234,234);
+  border-radius: 5px;
+  margin: 0 0.5em 0.5em 0.5em;
 }
 
 #newproduct {
   margin-top: 0.5em;
   display: inline-block;
   text-align: center;
+  font-size: 13px;
   cursor: pointer;
   text-decoration: none;
   padding: 0.5em 1em .5em;
@@ -373,6 +352,7 @@ a {
   margin-top: 0.5em;
   display: inline-block;
   text-align: center;
+  font-size: 13px;
   cursor: pointer;
   text-decoration: none;
   padding: 0.5em 1em .5em;
@@ -384,10 +364,8 @@ a {
   -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
   box-shadow: 0 1px 2px rgba(0,0,0,.2);
 }
-.productlist h2 {
-  padding-bottom: 0.5em;
 
-}
+
 .productname {
   position:relative;
   float:left;
@@ -415,8 +393,8 @@ a {
 
 #newtoggles {
   padding: 0.5em;
-  margin-top: -3em;
-  margin-left: 72%;
+  margin-top: -8em;
+  margin-left: 74%;
 }
 
 #newtoggles p {
@@ -426,21 +404,22 @@ a {
 
 #addproducts { 
   border-radius: 5px;
-  margin-right: 2%;
-  margin-left: 0.5%;
+  margin-left: 73%;
   padding: 0.5em 1.5em;
-  width: 25%; 
+  width: 22%; 
   background-color: rgba(0, 128, 128, 0.3);
   float:left;
   overflow: auto;
-  max-height: 42em;
+  max-height: 75%;
   display: none;
+  position: absolute;
 }  
 
 
-#addproducts input[type=text], input[type=password] {
+#addproducts input[type=text] {
   padding: 0 0.8em;
   width: 60%;
+  margin-left: 0.5em;
   height: 2.3em;
   color: #404040;
   background: white;
@@ -451,22 +430,16 @@ a {
 
 #addproducts textarea {
   width: 90%;
-  height: 12em;
-}
-.preview
-{
-width:200px;
-border:solid 1px #dedede;
-padding:10px;
-}
-#preview
-{
-color:#cc0000;
-font-size:12px
+  height: 5em;
+  border: 1px solid;
+  border-color: #c4c4c4;
+  border-radius: 2px;
+
 }
 
 
-#addproducts input[type=submit]{
+
+#addproducts input[type=button]{
   margin-top: 1em;
   padding: 0 18px;
   height: 29px;
@@ -481,22 +454,28 @@ font-size:12px
   cursor: pointer;
 }
 
-#addcategories { 
+#fileprogress {
+  display: none;
+}
+
+
+#addcategory { 
   border-radius: 5px;
-  margin-right: 2%;
-  margin-left: 0.5%;
+  margin-left: 73%;
   padding: 0.5em 1.5em;
-  width: 25%; 
+  width: 22%; 
   background-color: rgba(0, 128, 128, 0.3);
   float:left;
   overflow: auto;
   max-height: 42em;
   display: none;
+  position: absolute;
 }
 
 
-#addcategories input[type=text] {
+#addcategory input[type=text] {
   padding: 0 0.8em;
+  margin-left: 0.5em;
   width: 60%;
   height: 2.3em;
   color: #404040;
@@ -507,7 +486,7 @@ font-size:12px
 }
 
 
-#addcategories  input[type=submit]{
+#addcategory  input[type=button]{
   margin-top: 1em;
   padding: 0 18px;
   height: 29px;
@@ -522,24 +501,9 @@ font-size:12px
   cursor: pointer;
 }
 
+
 #center {
     top: 50%;
     left: 50%;
     position: absolute;
-}
-
-#confirmdelete {
-    position: relative;
-    z-index: 100;
-    background: rgba(234,234,234, 0.9);
-    border-radius: 5px;
-    width: 450px;
-    margin-left: -300px;
-    height: 70px;
-    margin-top: -200px;
-}
-
-#confirmdelete p {
-  text-align: center;
-  font-size: 13pt;
 }

@@ -14,23 +14,25 @@ include_once "inc/functions.php";
 	<script src='lib/productdisplay.js' type='text/javascript'></script>
 </head>
 <body>
+
 	<div id="wrapper">
 		<div id="header">
 			<div id="logo">
 				<p>Link to <a href="http://localhost/MAMP/?language=English">phpMyAdmin</a></p>
 				<h1><a href="#"> Content Management System </a></h1>
 			</div>
-
-			<div id="menu">				
+			<div id="menu">	
+			<ul><li><a href='index.php'>Home</a></li>
 				<?php
-				mainmenudropdown(0, 1);
+				mainmenu(0, 1);
 				?>
+				<li><a href='/basket.php'>Your Basket</a></li></ul>
 			</div>
 		</div>
 		<!-- end of header -->
 	</div>
 	<div id="content" class="visible">
-			<ul class="products"></ul>
+			<div id="products"></div>
 	</div>
 	<div id="details"><div id="detailImg"></div></div>
 

@@ -1,0 +1,2 @@
+source getqueryvariable
+// http://css-tricks.com/snippets/javascript/get-url-variables/

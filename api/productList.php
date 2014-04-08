@@ -1,6 +1,18 @@
 <?php
 require "../inc/connect.php";
-if(isset($_GET['filter'])){
+
+if($_GET['filter'] == "false") {
+	$sql1 = mysql_query("SELECT id, name, price, colour FROM products");
+	$rows1 = array();
+	while($r1 = mysql_fetch_assoc($sql1)) {
+		$rows1[] = $r1;
+	}
+	$data1 = array('Products' => $rows1);
+	$json1 = json_encode($data1);
+	echo $json1;
+}
+
+else{
 	$filter = $_GET["filter"];
 	$sql = mysql_query("SELECT id, name, price, colour FROM products WHERE category='$filter' OR subcategory='$filter'");
 	$rows = array();
@@ -10,8 +22,5 @@ if(isset($_GET['filter'])){
 	$data = array('Products' => $rows);
 	$json = json_encode($data);
 	echo $json;
-}
-else {
-	echo "No Products";
 }
 ?>
