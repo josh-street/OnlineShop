@@ -1,1 +1,0 @@
-Using the JQuery library for the show/ hide function on the add new products/ categories div. removes use of a link that appends # to end of url therefore not dynamic.

@@ -1,7 +1,7 @@
 <?php
 require "../api/connect.php";
 $pid = $_GET["ProductID"];
-$query = "SELECT id, name, price, description, category, subcategory FROM products WHERE id=$pid";
+$query = "SELECT id, name, price FROM products WHERE id=$pid";
 $sql = mysql_query($query);
 $rows = array();
 while($r = mysql_fetch_assoc($sql)) {

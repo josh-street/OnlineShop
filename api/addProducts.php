@@ -1,13 +1,14 @@
 <?php
-require_once '../inc/connect.php';
-if (isset($_REQUEST)){
-	//Get form data from JSON request
-	$name = mysql_real_escape_string($_REQUEST['product_name']);
-	$price = mysql_real_escape_string($_REQUEST['price']);
-	$colour = mysql_real_escape_string($_REQUEST['colour']);
-	$desc = mysql_real_escape_string($_REQUEST['description']);
-	$cat = mysql_real_escape_string($_REQUEST['category']);
-	$subcat = mysql_real_escape_string($_REQUEST['sub_category']);
+require_once '../api/connect.php';
+//Get form data from JSON request
+$id = mysql_real_escape_string($_REQUEST['product_id']);
+$name = mysql_real_escape_string($_REQUEST['product_name']);
+$price = mysql_real_escape_string($_REQUEST['price']);
+$desc = mysql_real_escape_string($_REQUEST['description']);
+$cat = mysql_real_escape_string($_REQUEST['category']);
+$subcat = mysql_real_escape_string($_REQUEST['sub_category']);
+
+if (!$id){
 // PHP variable taking the mysql_query that selects all products that match the new one.
 	$sql = mysql_query("SELECT id FROM products WHERE name='$name' AND subcategory='$subcat' LIMIT 1");
 	$productClash = mysql_num_rows($sql);
@@ -37,7 +38,13 @@ if (isset($_REQUEST)){
 
 	exit();
 }
+else {
+	$sql = mysql_query("UPDATE products SET name='$name', price='$price', description='$desc', category='$cat', subcategory='$subcat', stockNo=50 WHERE id='$id'");
+	$response["success"] = TRUE;
+	$response["details"] = "Product Updated";
+	echo json_encode($response);
 
+}
 function make_thumb($src, $dest) {
 
 	// read the source image 

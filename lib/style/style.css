@@ -8,7 +8,6 @@ body {
   background: #ffffff;
   font-size: 14px;
   color: #000000;
-
 }
 
 h1, h2, h3, h4 {
@@ -17,7 +16,6 @@ h1, h2, h3, h4 {
   font-family: Helvetica, sans-serif;
   color: rgba(0, 128, 128, 0.7);
   font-family: 'Ubuntu', sans-serif;
-
 }
 
 h1 {
@@ -44,19 +42,12 @@ h4 {
   font-weight: 400;
 }
 
-
 a {
   text-decoration: none;
   color: #008080;
 }
 
-
-#wrapper {
-  padding: 0;
-
-}
 /* Header */
-
 #header {
   text-align: center;
   width: 99%;
@@ -77,13 +68,15 @@ a {
   font-weight: 400; 
 }
 
+.hidden {
+  display: none;
+}
+
 /* Menu */
 #menu {
   border-bottom: 1px dotted #000;
   border-top: 1px dotted #000;
-
 }
-
 
 #menu ul {
   margin: 0 auto; 
@@ -92,7 +85,6 @@ a {
   text-align: center;
   color: #000000;
   display: inline-block;
-
 }
 
 #menu li {
@@ -102,8 +94,6 @@ a {
   padding-bottom: 0.5em;
 }
 
-
-
 #menu a {
   display: block;
   text-align: center;
@@ -112,12 +102,6 @@ a {
   font-weight: 600;
   color: #000000;
   border: none;
-}
-
-
-
-#menu .last {
-  border-right: none;
 }
 
 #menu ul li ul {
@@ -130,10 +114,7 @@ a {
   background: #D8D8D8;
   border-bottom-left-radius:5px;
   border-bottom-right-radius:5px;
-
-
 }
-
 
 #menu ul li ul a{
   font-size: 15px;
@@ -141,42 +122,75 @@ a {
   padding-bottom: 0.2em;
   padding-top: 0.2em;
   max-width: 100%;
-
-
 }
 
 #menu ul li ul a:hover{
   background: #BDBDBD;
   color: #008080;
-
 }
+
 #menu ul li ul a:active{
   color: #008080;
   text-shadow: 0px 1px 1px #008080;
   text-decoration: underline;
-
 }
 
 #menu ul li:hover {
   color: #008080;
   background: #D8D8D8;
-
 }
+
 #menu ul li a:hover {
   color: #008080;
-
-
 }
+
 #menu ul li a:hover > #menu{
   display: none;
-
 }
 
 #menu ul li:hover ul{
   color: #008080;
   display: block;
-
 }
+
+#basketlink:hover > #basket {
+  display: block;
+}
+
+#search:hover > #searchbar {
+  display: block;
+}
+
+#searchbar {
+  display: none;
+  position: absolute;
+  background: white;
+  width: 23em;
+  top: 100%;
+  left: -5em;
+  overflow: auto;
+  max-height: 20em;
+}
+
+#basket {
+  display: none;
+  position: absolute;
+  background: white;
+  width: 23em;
+  top: 100%;
+  left: -5em;
+  overflow: auto;
+  max-height: 20em;
+}
+
+#basket p {
+  font-size: 10pt;
+  color: black;
+  text-align: center;
+  display: inline;
+  padding-right: 2em;
+}
+
 #content {
   padding-top: 1em;
   padding: 0 auto;
@@ -186,47 +200,121 @@ a {
   float: center;
 }
 
-#details {
-  border-radius: 5px;
-  margin-right: auto;
-  padding-top: 1em;
-  padding-left: 0.5em;
-  width: 50%; 
-  overflow: auto;
-  max-height: 38em;
-}
-
-#details p,h2,h3 {
-  display: inline-block;
-}
-
-#details img {
-  display: inline-block;
-  vertical-align: top;
-  width: 60%;
-
-}
-
-
-
-.hidden{
-  display: none;
-}
-.visible{
+#products {
   display: block;
 }
 
-#description h2 {
-  text-align: left;
+#checkout {
+  margin: 2em 5em;
 }
 
-#description h3 {
-  padding-top: 1.5em;
+/*#userForm { 
+  margin: 1% 30%;
+  display: none;
+  border-radius: 5px;
+  padding: 0 auto;
+  width: 30%; 
+  background-color: rgba(0, 128, 128, 0.3);
+  float:left;
+  overflow: auto;
+  max-height: 75%;
+  position: absolute;
+} 
+
+#userForm p { 
+  padding-left: 3em;
+} 
+#userForm input[type=text] {
+  width: 20em;
+  padding-left: 1em;
+  margin-left: 0.5em;
+  height: 2.3em;
+  color: #404040;
+  background: white;
+  border: 1px solid;
+  border-color: #c4c4c4;
+  border-radius: 2px;
+}
+#userForm select {
+  margin-left: 1em;
+}
+
+#userForm textarea {
+  width: 90%;
+  height: 5em;
+  border: 1px solid;
+  border-color: #c4c4c4;
+  border-radius: 2px;
+}
+*/
+#checkoutsubmit{  
+  height: 29px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #4c4c4c;
+  text-shadow: 0 1px #e3f1f1;
+  background: #f3f3f3;
+  border: 1px solid #d0d0d0;
+  border-radius: 5px;
+  outline: 0;
+  cursor: pointer;
+  display: block;
+}
+#details {
+  border-radius: 15px;
+  margin: auto;
+  padding-top: 1em;
+  padding-left: 1.5em; 
+  width: 60%;
+  max-height: 38em;
+  position: absolute;
+  display: block;
+  background: white;
+}
+
+#details img {
+  width: 30em;
+  display: block;
+  float: right;
+  margin-top: 0;
+}
+
+#details h2 {
+  display: block;
+  text-align: left;
+  padding-bottom: 1em;
+}
+
+#details h4 {
+  display: block;
+  text-align: left;
   padding-bottom: 0.5em;
 }
 
-#description p {
-  font-size: 14pt;
+#details button {
+  display: block;
+  margin-left: 0;
+  padding: 0 18px;
+  height: 29px;
+  width: 12em;
+  font-size: 12px;
+  font-weight: bold;
+  color: #4c4c4c;
+  text-shadow: 0 1px #e3f1f1;
+  background: #f3f3f3;
+  border: 1px solid #d0d0d0;
+  border-radius: 5px;
+  outline: 0;
+  cursor: pointer;
+}
+
+#details p {
+  max-width: 45%;
+  min-height: 10em;
+}
+
+#description {
+  font-size: 12pt;
 }
 
 #addtobask {
@@ -242,7 +330,6 @@ a {
   cursor: pointer;
 }
                     
-
 .footer {
   overflow: hidden;
   width: 99%;
@@ -252,7 +339,6 @@ a {
   right: 0;  
   margin: 0px auto 0px auto;
   background: #ffffff;  
-  padding-top: 5px;
   border-top: 1px dotted #4d4d4d;
 }
 
@@ -260,7 +346,6 @@ a {
   text-align: center; 
   color: #000000;
   font-size: 14px;
-  padding-left: 5em;
 }
 
 .footer .right {
@@ -275,18 +360,42 @@ a {
 }
 
 .right:hover {
-   border: 1px solid #525252;
-   background: #008080;
-   background-color:rgba(0, 128, 128, 0.5);
-   color: black;
-   }
+  border: 1px solid #525252;
+  background: #008080;
+  background-color:rgba(0, 128, 128, 0.5);
+  color: black;
+}
+
 .right:active {
-   border-top-color: #8a8a8a;
-   background: #8a8a8a;
-   }
+  border-top-color: #8a8a8a;
+  background: #8a8a8a;
+}
+
+.footer .left {
+  float: left;
+  border: 1px dotted #5c5c5c;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #000000;
+  font-size: 12px;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+.left:hover {
+  border: 1px solid #525252;
+  background: #008080;
+  background-color:rgba(0, 128, 128, 0.5);
+  color: black;
+}
+
+.left:active {
+  border-top-color: #8a8a8a;
+  background: #8a8a8a;
+}
 
 
-#adminmenu {
+#cmsmenu {
   border-radius: 5px;
   margin-left: 2.5%;
   margin-top: -5em;
@@ -297,15 +406,11 @@ a {
   overflow: hidden;
 }
 
-#adminmenu ul {
+#cmsmenu ul {
   padding-left: 2em;
   overflow: hidden;
   list-style: none;
 
-}
-#adminmenu h3 {
-  padding-left: 1em;  
-  
 }
 
 #productlist {
@@ -365,41 +470,10 @@ a {
   box-shadow: 0 1px 2px rgba(0,0,0,.2);
 }
 
-
-.productname {
-  position:relative;
-  float:left;
-  width: 16%;
-  margin: 1.5%;
-  height: 12em;
-  vertical-align:middle;
-
-}
-
-.productname p {
-  text-align: center;
-  padding-left: 5px;
-  margin-bottom: 1px;
-}
-
-.productname img {
-  padding: 0 auto;
-}
-
-.productname small {
-  font-size: 9pt;
-  padding-left: 60%;
-}
-
 #newtoggles {
   padding: 0.5em;
-  margin-top: -8em;
+  margin-top: -5em;
   margin-left: 74%;
-}
-
-#newtoggles p {
-  padding-left: 0.4em;
-  padding-right: 0.4em; 
 }
 
 #addproducts { 
@@ -413,8 +487,7 @@ a {
   max-height: 75%;
   display: none;
   position: absolute;
-}  
-
+} 
 
 #addproducts input[type=text] {
   padding: 0 0.8em;
@@ -437,11 +510,7 @@ a {
 
 }
 
-
-
-#addproducts input[type=button]{
-  margin-top: 1em;
-  padding: 0 18px;
+#psubmit{  
   height: 29px;
   font-size: 12px;
   font-weight: bold;
@@ -452,12 +521,29 @@ a {
   border-radius: 5px;
   outline: 0;
   cursor: pointer;
+  display: block;
 }
 
-#fileprogress {
+#product_id {
   display: none;
 }
 
+#pupdate{  
+  height: 29px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #4c4c4c;
+  text-shadow: 0 1px #e3f1f1;
+  background: #f3f3f3;
+  border: 1px solid #d0d0d0;
+  border-radius: 5px;
+  outline: 0;
+  cursor: pointer;
+  display: none;
+}
+#fileprogress {
+  display: none;
+}
 
 #addcategory { 
   border-radius: 5px;
@@ -472,7 +558,6 @@ a {
   position: absolute;
 }
 
-
 #addcategory input[type=text] {
   padding: 0 0.8em;
   margin-left: 0.5em;
@@ -484,7 +569,6 @@ a {
   border-color: #c4c4c4;
   border-radius: 2px;
 }
-
 
 #addcategory  input[type=button]{
   margin-top: 1em;
@@ -499,11 +583,4 @@ a {
   border-radius: 5px;
   outline: 0;
   cursor: pointer;
-}
-
-
-#center {
-    top: 50%;
-    left: 50%;
-    position: absolute;
 }

@@ -1,8 +1,8 @@
 <?php
-require "../inc/connect.php";
+require "../api/connect.php";
 
-if($_GET['filter'] == "false") {
-	$sql1 = mysql_query("SELECT id, name, price, colour FROM products");
+if($_GET['filter'] == "undefined") {
+	$sql1 = mysql_query("SELECT id, name, price, stockNo FROM products");
 	$rows1 = array();
 	while($r1 = mysql_fetch_assoc($sql1)) {
 		$rows1[] = $r1;
@@ -14,7 +14,7 @@ if($_GET['filter'] == "false") {
 
 else{
 	$filter = $_GET["filter"];
-	$sql = mysql_query("SELECT id, name, price, colour FROM products WHERE category='$filter' OR subcategory='$filter'");
+	$sql = mysql_query("SELECT id, name, price, stockNo FROM products WHERE category='$filter' OR subcategory='$filter'");
 	$rows = array();
 	while($r = mysql_fetch_assoc($sql)) {
 		$rows[] = $r;
